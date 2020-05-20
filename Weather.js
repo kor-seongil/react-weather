@@ -10,6 +10,12 @@ const weatherOptions = {
         gradient: ["#bdc3c7","#2c3e50"],
         title: "구름 많음",
         subtitle: "민디야!!!!!!!!!!!!!!!!!!!!!!!!!"
+    },
+    Clear: {
+        iconName: "weather-cloudy",
+        gradient: ["#005AA7","#FFFDE4"],
+        title: "맑음",
+        subtitle: "민디야!!!!!!!!!!!!!!!!!!!!!!!!!"
     }
 };
 
