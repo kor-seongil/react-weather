@@ -15,6 +15,7 @@ export default class extends React.Component {
   getWeather = async (latitude, longitude) => {
     const { data: {
               main: { temp },
+              sys: { country },
               weather
              }
           } = await axios.get(
@@ -24,7 +25,8 @@ export default class extends React.Component {
     this.setState({
       isLoading: false,
       condition: weather[0].main,
-      temp 
+      temp,
+      country 
     })
   }
 
@@ -51,9 +53,9 @@ export default class extends React.Component {
 
   
   render() {
-    const { isLoading, temp, condition } = this.state;
+    const { isLoading, temp, condition, country } = this.state;
     //Alert.alert("kkk", condition);
-    return isLoading ? <Loading /> : <Weather temp={Math.round(temp)} condition={condition} />;
+    return isLoading ? <Loading /> : <Weather country={country} temp={Math.round(temp)} condition={condition} />;
   }
 
 
